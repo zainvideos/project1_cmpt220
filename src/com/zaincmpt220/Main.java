@@ -45,26 +45,23 @@ public class Main {
 //lets start with args.length so we can complain about blank entries right off the bat
          if(args.length ==0)
             System.out.println("You need to select an option.... are you feeling ok?");
-        else if (args[0].contains("e")){
+        else if (args[0].toString().equals("e")||args[0].toString().equals("events")) {
             System.out.println(event);
              //we obviously need to loop through all the values in the olympian matrix to print them, using the standard
              //System.out.println(olympian); is just going to print out the memory location of the matrix lol
-    }else if(args[0].contains("o")){
-            for (int i = 0; i < 15; i++) {
+    }else if(args[0].equals("o")||args[0].toString().equals("olympians")){
+            for (int i = 0; i < olympian.length; i++) {
                 for (int j = 0; j < 3; j++) {
                     System.out.println(olympian[i][j] + " ");
                 }
                 System.out.println("\n");
             }
-    }else if(args[0].contains("h")) {
+    }else if(args[0].equals("h")||args[0].toString().equals("help")) {
             System.out.println("Type e for list of events, or type o for a list of olympians");
     }
 //there are only 3 options, this isn/'t that hard...
         else System.out.println("What the hell is wrong with you, that is not an option!");
-/* wait you/'re probably thinking why i did (args[0].contains("n")), considering this method allows you to type words that aren/'t even options.
-its because this way you can type "derp" (and some other random words) and still get some useful information. otherwise we could
- just compare string to string values
- */
+
     }
 }
 // ok I think im done with this assignment, time to continue working on my health care system #letschangetheworld
